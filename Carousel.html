@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图demo</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #1f1f1f
+        }
+        .box,.box1{
+            overflow: hidden;
+            position: relative;
+            width:100%;
+            margin: 0 auto 5% auto;
+        }
+        .box{
+            max-width: 720px;
+        }
+        .box1{
+            max-width: 750px;
+        }
+        li{
+            float: left;
+            list-style: none;
+        }
+        ol{
+            width:100%;
+            height: 20px;
+            position: absolute;
+            bottom: 0;
+        }
+        ol li{
+            position: relative;
+            margin-left: 15px;
+            display: inline;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: gainsboro;
+        }
+        ol .action{
+            background-color: #de6e6a;
+        }
+        ol li:hover{
+            background-color: #DE6E6A;
+        }
+        ul{
+            position: relative;
+            left: 0;
+        }
+        .next{
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            background: url("img/next.png");
+            width: 50px;
+            height: 45px;
+            display: block;
+            line-height: 80px;
+        }
+        .prev{
+            opacity: 0;
+            background: url("img/prev.png");
+            display: block;
+            position: absolute;
+            width: 50px;
+            height: 45px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .prev,.next{
+            transition: all 0.5s;
+        }
+        .next:hover,.prev:hover{
+            -webkit-transform: scale(1.2,1.2);
+            -moz-transform: scale(1.2,1.2);
+            -ms-transform: scale(1.2,1.2);
+            -o-transform: scale(1.2,1.2);
+            transform: scale(1.2,1.2);
+            opacity: 1!important;
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div id="scoll" class="scoll">
+    <div class="box1" id="box1">
+        <ul id="list1" class="list">
+            <li class="li"><img src="img/b1.jpg" alt=""></li>
+            <li class="li"><img src="img/b2.jpg" alt=""></li>
+            <li class="li"><img src="img/b3.jpg" alt=""></li>
+            <li class="li"><img src="img/b4.jpg" alt=""></li>
+            <li class="li"><img src="img/b5.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div class="box" id="box">
+        <ul id="list" class="list">
+            <li class="li"><img src="img/a1.png" alt="" ></li>
+            <li class="li"><img src="img/a2.png" alt="" ></li>
+            <li class="li"><img src="img/a3.png" alt="" ></li>
+            <li class="li"><img src="img/a4.png" alt="" ></li>
+            <li class="li"><img src="img/a5.png" alt="" ></li>
+            <li class="li"><img src="img/a6.png" alt="" ></li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        $("#box1").swiper({ratio:8/5,time:2000});
+        $("#box").swiper({time:2000,base:false,ratio:290/163});
+
+    };
+</script>
+<script type="text/javascript" src="js/EventUtil.js"></script>
+<script type="text/javascript" src="js/swiperdemo2.js" charset="utf-8" ></script>
+</body>
+
+
+
+</html>
